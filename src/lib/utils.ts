@@ -3,6 +3,20 @@ import { twMerge } from "tailwind-merge";
 import { cubicOut } from "svelte/easing";
 import type { TransitionConfig } from "svelte/transition";
 
+export function formatNumber(value: number) {
+	return Intl.NumberFormat("de-DK", {
+		style: "currency",
+		currency: "DKK"
+	})
+		.format(value)
+}
+
+export function toTitleCase(str: string) {
+	return str.replace(/\w\S*/g, function (txt) {
+		return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+	});
+}
+
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }

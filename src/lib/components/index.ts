@@ -1,0 +1,1 @@
+export { default as Overførsel } from './Overførsel.svelte';
